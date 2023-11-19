@@ -8,12 +8,20 @@ public class Slot {
         this.slotNo = slotNo ;
     }
 
+    public Integer getSlotNo() {
+        return slotNo;
+    }
+
     public void assignCar(Car parkedCar) {
         this.parkedCar = parkedCar ;
     }
 
     public void freeSlot() {
         this.parkedCar = null ;
+    }
+
+    public Car getParkedCar() {
+        return parkedCar;
     }
 
     public boolean isSlotFree() {

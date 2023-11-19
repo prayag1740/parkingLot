@@ -20,10 +20,17 @@ public class ParkingLot {
         }
         this.capacity = capacity ;
         this.slots = new HashMap<>() ;
+        for (int i=1 ; i<=capacity ; i++) {
+            this.slots.put(i, new Slot(i));
+        }
     }
 
     public Map<Integer, Slot> getSlots() {
         return slots;
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 
     /**
@@ -36,9 +43,6 @@ public class ParkingLot {
             throw new InvalidSlotException();
         }
         Map<Integer, Slot> allSlots = getSlots() ;
-        if (!allSlots.containsKey(slotNo)) {
-            allSlots.put(slotNo, new Slot(slotNo));
-        }
         return allSlots.get(slotNo);
     }
 
